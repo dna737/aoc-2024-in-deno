@@ -13,7 +13,7 @@ function printCumulativeDifference(): void {
   const left: number[] = [];
   const right: number[] = [];
   let result1: number = 0;
-  // let result2: number = 0;
+  let result2: number = 0;
 
   for (const line of data) {
     const trimmed = line.trim().split(" ");
@@ -24,14 +24,14 @@ function printCumulativeDifference(): void {
   left.sort();
   right.sort();
 
+  // p2: while looping over, use array.filter(x).length to find similarity score.
   for (let i = 0; i < left.length; i++) {
     result1 += Math.abs(left[i] - right[i]);
+    result2 += left[i] * (right.filter(x => x === left[i]).length);
   }
 
-  // p2: while looping over, use array.filter(x).length to find similarity score.
-
   console.log("result1:", result1);
-  // console.log("result2:", result2);
+  console.log("result2:", result2);
 }
 
 // Learn more at https://docs.deno.com/runtime/manual/examples/module_metadata#concepts
