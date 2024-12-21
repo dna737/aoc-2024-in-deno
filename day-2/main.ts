@@ -94,4 +94,4 @@ if (import.meta.main) {
   ]
 
   printNumSafeReports(data);
-}
+}  
