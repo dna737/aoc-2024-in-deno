@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { add,  parseValidMuls } from "./main.ts";
+import { parseValidMuls } from "./main.ts";
 
 Deno.test(function addTest() {
   const lines: string[] = [
@@ -7,8 +7,3 @@ Deno.test(function addTest() {
   ]
   assertEquals(parseValidMuls(lines), 13);
 });
-
-// Deno.test(function mulOperandsTest() {
-//   const line: string = "mul(1,3)"
-//   vfpassertEquals(parseMulOperands(line), [1, 3]);
-// });
